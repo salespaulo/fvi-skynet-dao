@@ -1,5 +1,5 @@
 {
-    "name": "fvi-dao-skynet",
+    "name": "fvi-skynet-dao",
     "version": "0.0.0",
     "description": "FVI - Data Access Object for Skynet",
     "main": "src/index.js",

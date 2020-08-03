@@ -124,7 +124,7 @@ Example of success print:
 */
 ```
 
-# fvi-dao-skynet
+# fvi-skynet-dao
 
 -   `npm run compile`: Clean temp files and e directories.
 -   `npm run debug-test`: Run mocha unit tests with DEBUG enabled.
