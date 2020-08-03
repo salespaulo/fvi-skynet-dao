@@ -2,16 +2,16 @@
 
 # fvi-dao-skynet
 
--   `npm run compile`: Executa a limpeza dos arquivos e diretorios.
--   `npm run debug-test`: Executa os testes unitários com o DEBUG ativo.
--   `npm run test`: Executa os testes unitários.
--   `npm run debug-dev`: Executa os testes unitários e espera por alterações com o DEBUG ativo.
--   `npm run dev`: Executa os testes unitários e espera por alterçãoes.
--   `npm run prod`: Executa o código com NODE_ENV=production.
--   `npm run coverage`: Executa os testes unitários e retorna o [nyc](https://github.com/istanbuljs/nyc/)
--   `npm run release`: Inicia uma nova release de versão incrementando o **patch**, [git flow](https://github.com/nvie/gitflow/) release start.
--   `npm run release:minor`: Inicia uma nova release de versão incrementando o **minor**, [git flow](https://github.com/nvie/gitflow/) release start.
--   `npm run release:major`: Inicia uma nova release de versão incrementando o **major**, [git flow](https://github.com/nvie/gitflow/) release start.
--   `npm run release:finish`: Finaliza a release, ou seja, realiza o [git flow](https://github.com/nvie/gitflow/) release finish.
+-   `npm run compile`: Clean temp files and e directories.
+-   `npm run debug-test`: Run mocha unit tests with DEBUG enabled.
+-   `npm run test`: Run mocha unit tests.
+-   `npm run debug-dev`: Run dev mode, waiting for changes to run unit tests with DEBUG enabled (watch mode).
+-   `npm run dev`: Run dev mode, waiting for changes to run unit tests.
+-   `npm run prod`: Run with NODE_ENV=production.
+-   `npm run coverage`: Run unit tests and coverage with [nyc](https://github.com/istanbuljs/nyc/).
+-   `npm run release`: Init git flow release from next package version, **patch**, [git flow](https://github.com/nvie/gitflow/).
+-   `npm run release:minor`: Init git flow release from next package version, **minor**, [git flow](https://github.com/nvie/gitflow/).
+-   `npm run release:major`: Init git flow release from next package version, **major**, [git flow](https://github.com/nvie/gitflow/) release start.
+-   `npm run release:finish`: Finish current releas, [git flow](https://github.com/nvie/gitflow/).
 
-## FVI - Data Access Object for Skynet
+## Freunde Von Ideen - - Data Access Object for Skynet
