@@ -1,0 +1,48 @@
+{
+    "name": "fvi-skynet-dao",
+    "version": "0.0.1",
+    "description": "FVI - Data Access Object for Skynet",
+    "main": "src/index.js",
+    "prettier": "fvi-prettier-config",
+    "scripts": {
+        "compile": "grunt compile",
+        "test": "grunt test",
+        "debug-test": "grunt debug-test",
+        "dev": "grunt dev",
+        "debug-dev": "grunt debug-dev",
+        "prod": "grunt prod",
+        "release": "grunt version && grunt release",
+        "release:minor": "grunt version:minor && grunt release:minor",
+        "release:major": "grunt version:major && grunt release:major",
+        "release:finish": "grunt release:finish",
+        "coverage": "npx nyc@latest npm run test"
+    },
+    "keywords": [
+        "skynet",
+        "dao"
+    ],
+    "author": "FVI",
+    "license": "MIT",
+    "dependencies": {
+        "@hapi/joi": "^17.1.1",
+        "fvi-skynet-client": "^0.0.1",
+        "string-to-file-stream": "^1.2.0"
+    },
+    "devDependencies": {
+        "uuid": "^8.1.0",
+        "chai": "^4.2.0",
+        "grunt": "^1.0.4",
+        "grunt-concurrent": "^3.0.0",
+        "grunt-contrib-clean": "^2.0.0",
+        "grunt-contrib-compress": "^1.6.0",
+        "grunt-contrib-watch": "^1.1.0",
+        "grunt-env": "^1.0.1",
+        "grunt-mocha-test": "^0.13.3",
+        "grunt-nodemon": "^0.4.2",
+        "grunt-notify": "^0.4.5",
+        "grunt-shell": "^3.0.1",
+        "fvi-prettier-config": "^0.0.1",
+        "load-grunt-tasks": "^5.0.1",
+        "mocha": "^7.1.0"
+    }
+}
