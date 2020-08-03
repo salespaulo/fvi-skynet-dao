@@ -15,7 +15,15 @@ const returnValueOrThrows = schema => param => {
 const validateOpts = joi
     .object({
         modelId: joi.string().required(),
-        mock: joi.boolean().optional(),
+        mock: joi
+            .object({
+                onDownloadIndexes: joi.function().required(),
+                onDownloadItem: joi.function().required(),
+                onUploadIndexes: joi.function().required(),
+                onUploadItem: joi.function().required(),
+            })
+            .optional()
+            .default(null),
         ttl: joi.number().optional(),
         indexes: joi
             .object({
@@ -27,8 +35,14 @@ const validateOpts = joi
     })
     .options({ stripUnknown: true })
 
+const validateIndexes = joi.object({
+    skylink: joi.string().optional().default(null),
+    values: joi.array().optional().default([]),
+    _versions: joi.array().optional().default([]),
+})
+
 module.exports = {
     validateOpts: returnValueOrThrows(validateOpts),
-    validateIndexes: returnValueOrThrows(joi.array().required()),
+    validateIndexes: returnValueOrThrows(validateIndexes),
     validateStringRequired: returnValueOrThrows(joi.string().required()),
 }
