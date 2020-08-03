@@ -25,7 +25,8 @@
     "license": "MIT",
     "dependencies": {
         "@hapi/joi": "^17.1.1",
-        "fvi-skynet-client": "^0.0.1"
+        "fvi-skynet-client": "^0.0.1",
+        "string-to-file-stream": "^1.2.0"
     },
     "devDependencies": {
         "uuid": "^8.1.0",

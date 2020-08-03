@@ -114,7 +114,7 @@ describe(`Testing app mock=true`, () => {
         })
 
         it(`Testing read one`, done => {
-            dao.readItem(skylinkItem)
+            dao.read(skylinkItem)
                 .then(res => {
                     chai.assert.exists(res)
                     chai.assert.exists(res.myId)
@@ -125,7 +125,7 @@ describe(`Testing app mock=true`, () => {
         })
 
         it(`Testing read one and update, creates new one version`, done => {
-            dao.readItem(skylinkItem)
+            dao.read(skylinkItem)
                 .then(res => {
                     res.status = false
                     chai.assert.exists(res.myId)
@@ -146,7 +146,7 @@ describe(`Testing app mock=true`, () => {
         })
 
         it(`Testing read idxs`, done => {
-            dao.readIndexes()
+            dao.indexes()
                 .then(res => {
                     chai.assert.exists(res)
                     chai.assert.exists(res.values)
@@ -159,7 +159,7 @@ describe(`Testing app mock=true`, () => {
         })
 
         it(`Testing read all`, done => {
-            dao.readIndexes()
+            dao.indexes()
                 .then(res => {
                     chai.assert.exists(res.values)
                     chai.assert.isArray(res.values)
@@ -171,7 +171,7 @@ describe(`Testing app mock=true`, () => {
         })
 
         it(`Testing read with filter email`, done => {
-            dao.readIndexes()
+            dao.indexes()
                 .then(res => {
                     chai.assert.exists(res)
                     chai.assert.isArray(res.values)

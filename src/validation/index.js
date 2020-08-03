@@ -24,7 +24,6 @@ const validateOpts = joi
             })
             .optional()
             .default(null),
-        ttl: joi.number().optional(),
         indexes: joi
             .object({
                 propId: joi.string().optional(),

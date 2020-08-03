@@ -1,6 +1,6 @@
 'use strict'
 
-const { JSONReadable } = require('./streams')
+const { stringToFileStream } = require('./streams')
 const { setMockUploadIdxs } = require('./utils')
 
 const uploadIdxs = (client, mock) => indexes => {
@@ -19,7 +19,7 @@ const uploadIdxs = (client, mock) => indexes => {
             indexes._versions.push(indexes.skylink)
         }
 
-        const stream = new JSONReadable(indexes)
+        const stream = stringToFileStream(JSON.stringify(indexes))
         return client.uploadFile(stream).then(res => res.data)
     } catch (e) {
         e.message = `Error uploading indexes from indexes=${JSON.stringify(indexes)}; error=${

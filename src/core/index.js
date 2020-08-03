@@ -11,7 +11,13 @@ const downloadIdxs = require('./download-idxs')
 module.exports = options => {
     options.indexes.values = []
 
-    const client = skynet({ mock: options.mock != null })
+    const client = skynet({
+        mock: options.mock != null,
+        headers: {
+            'User-Agent': 'Sia-Agent',
+        },
+    })
+
     const propId = options.indexes.propId
     const idxs = options.indexes.idxs
 

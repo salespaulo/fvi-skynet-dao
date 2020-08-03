@@ -3,7 +3,7 @@
 const uploadIdxs = require('./upload-idxs')
 const downloadIdxs = require('./download-idxs')
 
-const { JSONReadable } = require('./streams')
+const { stringToFileStream } = require('./streams')
 const { setMockUploadItem, setItemDefaults } = require('./utils')
 
 const uploadItem = (client, propId, idxs, mock) => currentSkylinkIdxs => async (data = {}) => {
@@ -22,7 +22,7 @@ const uploadItem = (client, propId, idxs, mock) => currentSkylinkIdxs => async (
 
         setMockUploadItem(client, propId, idxs, currentSkylinkIdxs, data, mock)
 
-        const stream = new JSONReadable(data)
+        const stream = stringToFileStream(JSON.stringify(data))
         const resUpload = await client.uploadFile(stream)
         const item = setItemDefaults(propId, resUpload.data.skylink, data)
 
@@ -32,10 +32,11 @@ const uploadItem = (client, propId, idxs, mock) => currentSkylinkIdxs => async (
         const indexes = await downloadIdxs(client, mock)(currentSkylinkIdxs)
         indexes.values.push(idxItem)
         const { skylink } = await uploadIdxs(client, mock)(indexes)
+        indexes.skylink = skylink
 
         return {
             item,
-            indexes: { skylink, values: indexes },
+            indexes,
         }
     } catch (e) {
         e.message = `Error uploading item from indexes current skylink=${currentSkylinkIdxs}; error=${e.message}`

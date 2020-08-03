@@ -1,6 +1,7 @@
 'use strict'
 
-const { Readable, Writable } = require('stream')
+const { Writable } = require('stream')
+const stringToFileStream = require('string-to-file-stream')
 
 class StringWritable extends Writable {
     constructor() {
@@ -13,14 +14,7 @@ class StringWritable extends Writable {
     }
 }
 
-class JSONReadable extends Readable {
-    construct(obj) {
-        this.push(JSON.stringify(obj))
-        this.push(null)
-    }
-}
-
 module.exports = {
-    JSONReadable,
     StringWritable,
+    stringToFileStream,
 }

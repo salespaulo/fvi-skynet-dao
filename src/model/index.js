@@ -13,14 +13,8 @@ class Model {
         return item
     }
 
-    async readIndexes() {
-        const skylink = this._options.indexes.skylink
-        const data = await this._client.downloadIndexes(skylink)
-        return data
-    }
-
-    async readItem(skylink) {
-        const indexes = await this.readIndexes()
+    async read(skylink) {
+        const indexes = await this.indexes()
         const hasItem = indexes.values.find(idx => idx.skylink === skylink)
 
         if (hasItem == null) {
@@ -30,6 +24,11 @@ class Model {
         }
 
         const data = await this._client.downloadItem(skylink)
+        return data
+    }
+    async indexes() {
+        const skylink = this._options.indexes.skylink
+        const data = await this._client.downloadIndexes(skylink)
         return data
     }
 }
