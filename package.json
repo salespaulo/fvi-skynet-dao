@@ -18,7 +18,8 @@
         "coverage": "npx nyc@latest npm run test"
     },
     "keywords": [
-        "utils"
+        "skynet",
+        "dao"
     ],
     "author": "FVI",
     "license": "MIT",
