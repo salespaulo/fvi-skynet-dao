@@ -14,9 +14,14 @@
 
 ## Freunde Von Ideen - Node Data Access Object for Skynet
 
-DAO Skynet Library, to access your JSON like Object data.
+Access your JSON like Object data into skynet between skylink indexes.
 
-### Using
+### Libs
+
+-   [fvi-skynet-client](https://github.com/salespaulo/fvi-skynet-client)
+-   [stream-to-file-stream](https://github.com/ayqy/string-to-file-stream#readme)
+
+### Install
 
 -   Terminal
 
