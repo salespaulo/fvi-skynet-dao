@@ -29,9 +29,8 @@
         "string-to-file-stream": "^1.2.0"
     },
     "devDependencies": {
-        "uuid": "^8.1.0",
         "chai": "^4.2.0",
-        "grunt": "^1.0.4",
+        "grunt": "^1.2.1",
         "grunt-concurrent": "^3.0.0",
         "grunt-contrib-clean": "^2.0.0",
         "grunt-contrib-compress": "^1.6.0",
@@ -42,7 +41,7 @@
         "grunt-notify": "^0.4.5",
         "grunt-shell": "^3.0.1",
         "fvi-prettier-config": "^0.0.1",
-        "load-grunt-tasks": "^5.0.1",
-        "mocha": "^7.1.0"
+        "load-grunt-tasks": "^5.1.0",
+        "mocha": "^8.1.0"
     }
 }
